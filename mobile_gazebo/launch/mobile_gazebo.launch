@@ -5,7 +5,7 @@
 <!--include file="$(find lle_control)/launch/lle_control.launch" /-->
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-   <!--arg name="world_name" value="worlds/empty.world"/-->
+   <arg name="world_name" value="$(find mobile_gazebo)/worlds/clearpath_playpen.world"/>
     <arg name="paused" value="false"/>
   
 
