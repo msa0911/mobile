@@ -62,7 +62,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-         <cylinder length="0.05" radius="0.05"/>
+         <cylinder length="0.04" radius="0.05"/>
           </geometry>
 </collision>
 <inertial>
@@ -98,7 +98,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-         <cylinder length="0.05" radius="0.05"/>
+         <cylinder length="0.04" radius="0.05"/>
           </geometry>
 </collision>
 <inertial>
@@ -134,7 +134,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-         <cylinder length="0.05" radius="0.05"/>
+         <cylinder length="0.04" radius="0.05"/>
           </geometry>
 </collision>
 <inertial>
@@ -170,7 +170,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-         <cylinder length="0.05" radius="0.05"/>
+         <cylinder length="0.04" radius="0.05"/>
           </geometry>
 </collision>
 <inertial>
@@ -259,6 +259,43 @@
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
   </link>
+
+<link name="sonar_link">
+          <visual>
+              <origin xyz="0 0 0" rpy="0 0 0"/>
+              <geometry>
+              <sphere radius="0.01"/>       
+              </geometry>
+              <material name="blue">
+              <color rgba="0 0 1 1"/>              
+              </material>
+          </visual>    
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+         <sphere radius="0.01"/> 
+          </geometry>
+</collision>
+<inertial>
+   <mass
+        value="0.01" />
+      <inertia
+        ixx="0.00301717973628494"
+        ixy="-3.18755438710738E-17"
+        ixz="-6.24500451351651E-17"
+        iyy="0.0176625083227497"
+        iyz="-0.000444787144430361"
+        izz="0.015853003043962" />
+</inertial>
+</link>
+
+<joint name="sonar_joint" type="fixed">
+   <origin xyz="0.14 0.02 0.16" rpy="0 0 0" />
+   <parent link="base_link"/>
+   <child link="sonar_link" />
+<axis xyz="0 1 0"/>
+</joint>
+
 
 <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
